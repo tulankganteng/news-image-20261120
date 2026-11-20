@@ -50,3 +50,10 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Reproducibility
+
+The image is fixed: `main.py` copies the repository's own `entry.png`
+to the output directory byte for byte, then reads the copy back and
+compares it with the source before reporting success. No network calls,
+no randomness, no image processing — two runs write identical bytes.
